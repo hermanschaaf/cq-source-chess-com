@@ -1,0 +1,35 @@
+kind: source
+spec:
+  name: "chess-com"
+  backend_options:
+    table_name: "chess_com_backend_options"
+    connection: "@@plugins.postgresql.connection"
+  registry: "local"
+  path: "./cq-source-chess-com"
+#  registry: "grpc"
+#  path: "localhost:7777"
+  tables:
+#  - "chess_com_archives"
+  - "chess_com_games"
+  destinations:
+  - "postgresql"
+  spec:
+    usernames:
+    - "supermaximum"
+    - "rexfuzzle"
+    - "AlexandraBotez"
+#    - "GothamChess"
+#    - "Hikaru"
+#    - "BotezLive"
+#    - "Anna_Chess"
+---
+kind: destination
+spec:
+  name: "postgresql"
+  version: "v6.0.2"
+  registry: "github"
+  path: "cloudquery/postgresql"
+  write_mode: "overwrite-delete-stale"
+  migrate_mode: "forced"
+  spec:
+    connection_string: "postgresql://postgres:pass@localhost:5432/cloudquery?sslmode=disable"
