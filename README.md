@@ -23,8 +23,15 @@ spec:
   version: "${VERSION}"
   destinations:
     - "postgresql"
+  tables:
+    - "chess_com_games"
+    - "chess_com_archives"
   spec:
     # plugin spec section
+    usernames: # list of usernames to sync
+     - magnuscarlsen
+     - hikaru
+     - gothamchess
 ```
 
 ## Development
