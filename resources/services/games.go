@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/agoblet/chesscompubapi"
-	"github.com/apache/arrow/go/v14/arrow"
+	"github.com/apache/arrow/go/v15/arrow"
 	"github.com/cloudquery/plugin-sdk/v4/schema"
 	"github.com/cloudquery/plugin-sdk/v4/transformers"
 	"github.com/hermanschaaf/cq-source-chess-com/client"

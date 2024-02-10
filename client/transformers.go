@@ -4,11 +4,12 @@ import (
 	"reflect"
 
 	"github.com/agoblet/chesscompubapi"
-	"github.com/apache/arrow/go/v14/arrow"
+	"github.com/apache/arrow/go/v15/arrow"
 	"github.com/cloudquery/plugin-sdk/v4/schema"
 	"github.com/cloudquery/plugin-sdk/v4/transformers"
 )
 
+// type TypeTransformer func(reflect.StructField) (arrow.DataType, error)
 var options = []transformers.StructTransformerOption{
 	transformers.WithTypeTransformer(typeTransformer),
 }
