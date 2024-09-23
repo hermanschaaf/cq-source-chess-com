@@ -26,7 +26,7 @@ spec:
 
 You can also use `backend_options` to configure [incremental syncs](https://docs.cloudquery.io/docs/advanced-topics/managing-incremental-tables):
 
-```
+```yaml
 kind: source
 spec:
   name: "chess-com"
@@ -54,7 +54,7 @@ Playing around with this data can be pretty fun. The PGNs and FENs for all games
 
 Here is one example query that shows a selection of 15 Magnus Carlsen games:
 
-```
+```sql
 select 
   white->>'username' as white, 
   black->>'username' as black,
@@ -65,7 +65,7 @@ where username = 'magnuscarlsen'
 limit 15;
 ```
 
-```
+```text
 +------------------+------------------+--------------+------------+
 | white            | black            | result_white | time_class |
 |------------------+------------------+--------------+------------|
